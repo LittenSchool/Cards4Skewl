@@ -12,10 +12,9 @@ public class Deck {
             Cards c = new Cards("Hearts", i);
             allCards[i-1] = c;
         }
-        /*for (int i = 0; i < allCards.length; i++) {
+        for (int i = 0; i < allCards.length; i++) {
             allCards[i].display();
         }
-        */
 
     }
 }
