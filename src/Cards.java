@@ -12,20 +12,20 @@ public class Cards {
     public String getValue() {
         if (value == 13) {
             return "King";
-        }
-        else if (value == 12) {
+        } else if (value == 12) {
             return "Queen";
-        }
-        else if (value == 11) {
+        } else if (value == 11) {
             return "Jack";
-        }
-        else if (value == 1) {
+        } else if (value == 1) {
             return "Ace";
-        }
-        else {
+        } else {
             return Integer.toString(value);
         }
     }
+    public void display() {
+        System.out.println(getValue() + " of " + getSuit());
+    }
+
 /*I made a change again*/
 
 }

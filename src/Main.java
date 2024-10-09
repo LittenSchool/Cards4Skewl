@@ -2,7 +2,8 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Cards myCard = new Cards("Spades", 11);
-        System.out.println(myCard.getValue() + "of" + myCard.getSuit());
+        //Cards myCard = new Cards("Spades", 11);
+        Deck deck = new Deck();
+
     }
 }
