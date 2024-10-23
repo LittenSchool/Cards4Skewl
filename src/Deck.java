@@ -1,6 +1,10 @@
+import java.util.Random;
+
+@SuppressWarnings("FieldMayBeFinal")
 public class Deck {
     private Cards[] allCards;
-    private String[] allCardString = new String[52];
+    private int topCard = 0;
+
     public Deck() {
         //initialise deck
         allCards = new Cards[52];
@@ -10,50 +14,27 @@ public class Deck {
             for (int i = 1; i <= 13; i++) {
                 Cards c = new Cards(listOfSuits[j], i);
                 allCards[i - 1 + (j * 13)] = c;
-
             }
-
-
         }
-        for (int i = 0; i < allCards.length; i++) {
-
-            allCardString[i] = allCards[i].getValue() + " of " + allCards[i].getSuit();
-        }
-
     }
-
-    public String[] alphabetSort(String[] list) {
-            boolean sorted = false;
-            int i = 0;
-            int counter = 0;
-            int temp = 0;
-            while (!sorted) {
-
-                if (list[i].compareTo( list[i+1])) {
-                    temp = list[i];
-                    list[i] = list[i+1];
-                    list[i+1] = temp;
-                }
-
-                i++;
-                if (i == list.length-2-counter){
-                    i = 0;
-                    counter++;
-                }
-
-                if (counter == list.length) {
-                    sorted = true;
-                }
-            }
-            return list;
+    public void display() {
+        for (Cards allCard : allCards) {
+            allCard.display();
         }
-
-
     }
-
-    public void displayAll() {
-        for (int i = 0; i < allCards.length; i++) {
-            System.out.println(allCardString[i]);
+    public void shuffle() {
+        topCard = 0;
+        for (int i = allCards.length-1; i > 0;i--) {
+            Random r = new Random();
+            int j = r.nextInt(0,i);
+            Cards temp = allCards[i];
+            allCards[i] = allCards[j];
+            allCards[j] = temp;
         }
+    }
+    public Cards deal() {
+        Cards temp = allCards[topCard];
+        topCard++;
+        return temp;
     }
 }
