@@ -4,8 +4,9 @@ public class Main {
     public static void main(String[] args) {
         Deck deck = new Deck();
         deck.shuffle();
-        deck.display();
-        Hand playerHand = new Hand("Player's");
-        playerHand
+        Hand playerHand = new Hand("Player");
+        playerHand.add(deck.deal());
+        playerHand.add(deck.deal());
+        playerHand.show();
     }
 }
