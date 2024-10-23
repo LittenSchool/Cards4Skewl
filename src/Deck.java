@@ -14,9 +14,7 @@ public class Deck {
                 allCards[i - 1 + (j * 13)] = c;
             }
         }
-
     }
-
     public void display() {
         for (Cards allCard : allCards) {
             allCard.display();
@@ -29,10 +27,6 @@ public class Deck {
             Cards temp = allCards[i];
             allCards[i] = allCards[j];
             allCards[j] = temp;
-
-
-
-
         }
     }
 }
