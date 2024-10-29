@@ -4,6 +4,11 @@ public class Hand {
     private ArrayList<Cards> cards = new ArrayList<>();
     private String name;
 
+    public void delay(int ms) {
+        long start = System.currentTimeMillis();
+        while(start >= System.currentTimeMillis() - ms);
+    }
+
     public Hand(String name) {
         this.name = name;
     }
@@ -19,6 +24,7 @@ public class Hand {
     public void show() {
         System.out.println("\n" + name + "'s Hand:");
         for (int i = 0; i < cards.size();i++) {
+            delay(500);
             cards.get(i).display();
         }
     }
